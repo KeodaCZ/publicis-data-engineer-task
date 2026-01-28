@@ -1,11 +1,32 @@
-# Campaign Performance ETL Analysis
+# Campaign Investment Analysis
 
-This project simulates a real-world data engineering task focused on extracting, transforming,
-and analyzing marketing campaign data.
+This repository contains a solution for a data engineering task focused on analyzing
+planned vs actual marketing campaign investment.
 
-The goal is to compare planned and actual campaign investments on a daily and cumulative basis.
-Data is extracted from Azure Blob Storage using secure access (SAS token), cleaned and aggregated
-using Python, and visualized to evaluate campaign performance over time.
+The project uses Python to load campaign data from Azure Blob Storage, clean and aggregate
+the data, and compare planned and actual investment on a daily and cumulative basis.
 
-The project is designed as a small-scale ETL pipeline and reflects typical workflows used in
-data engineering environments (e.g. Keboola, Azure Data Factory, Databricks).
+## Project Structure
+
+- `notebooks/`
+  - `campaign_analysis.ipynb` – Jupyter notebook used for data exploration, transformation
+    and visualization
+- `src/`
+  - `extract.py` – data extraction logic (loading CSV files from Azure Blob Storage)
+  - `config.py` – configuration and environment variable handling
+- `.env` – environment variables (not included in the repository)
+
+## Output
+
+The main output of the project is an exported HTML version of the Jupyter notebook,
+which contains:
+- data exploration and cleaning steps
+- daily and cumulative investment comparison
+- visualizations and brief explanations of results
+
+## Notes
+
+The notebook is intentionally kept focused on analysis and validation, while data extraction
+logic is separated into standalone Python modules.
+Sensitive configuration (e.g. access tokens) is handled via environment variables and is not
+stored in the repository.
